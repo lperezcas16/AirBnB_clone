@@ -1,149 +1,88 @@
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
+# 0x01. AirBnB clone - Web static
 
-<div align="center"><img src="images/gif2.gif" width="500" height="450"/>
-
-# AirBnB Clone :fast_forward:
-
-This repository contains the first phase of a student project to build a clone of the AirBnB website. This stage implements a command line interpreter to manage AirBnB objects. Using a system of JSON serialization/deserialization, storage is persistent between sessions.
-
-# USAGE :link:
-
-</div>
-
-1. Clone the repository.
-   
-2. Execute the command:
-
-````
- $ ./console.py
-````
-3. When this command is run the following prompt should appear:
- 
-````
-(hbnb)
-````
-4. This prompt designates you are in the "HBnB" console. There are a variety of commands available within the console program.
+## Resources:books:
+Read or watch:
+* [Learn to Code HTML & CSS](https://intranet.hbtn.io/rltoken/qq7qrSgdVRuD1kPd_jf7Fw)
+* [Inline Styles in HTML](https://intranet.hbtn.io/rltoken/Hx5KFagrj9L-HtAZ8SHK1Q)
+* [Specifics on CSS Specificity](https://intranet.hbtn.io/rltoken/sO3wz-QbhwYdKJqvokC4PA)
+* [CSS SpeciFishity](https://intranet.hbtn.io/rltoken/NvqQf3dgY64bb-QWC5Cueg)
+* [Introduction to HTML](https://intranet.hbtn.io/rltoken/STaxnOI5qv1enUuwIALelw)
+* [CSS](https://intranet.hbtn.io/rltoken/g-uj9Azx1rALX49xCZHK0w)
+* [MDN](https://intranet.hbtn.io/rltoken/El1BHRNNO2hPEcOt_XwF-Q)
+* [center boxes](https://intranet.hbtn.io/rltoken/HI0qRNDq20cgICIhO18kUQ)
 
 ---
-<div align="center">
+## Learning Objectives:bulb:
+What you should learn from this project:
 
-## COMMANDS  :open_file_folder:
-
-</div>
-
-| Command             | Description                                                                                                             |
-| ------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| create :pencil2:    | Creates a new instance of BaseModel, saves it (to the JSON file) and prints the id                                      |
-| show :eyes:         | Prints the string representation of an instance based on the class name and id                                          |
-| destroy :fire:      | Deletes an instance based on the class name and id                                                                      |
-| all :crystal_ball:  | Prints all string representation of all instances based or not on the class name                                        |
-| update :point_up_2: | Updates an instance based on the class name and id by adding or updating attribute (save the change into the JSON file) |
-| quit :end:          | Exit the program                                                                                                        |
-| help :shell:        | Display help documentation of every command                                                                             |
+* What is HTML
+* How to create an HTML page
+* What is a markup language
+* What is the DOM
+* What is an element / tag
+* What is an attribute
+* How does the browser load a webpage
+* What is CSS
+* How to add style to an element
+* What is a class
+* What is a selector
+* How to compute CSS Specificity Value
+* What are Box properties in CSS
 
 ---
 
-	
-## Example how to use
+### [0. Inline styling](./0-index.html)
+* Write an HTML page that displays a header and a footer.
 
-- all:crystal_ball:
-```
-(hbnb) all MyModel
-** class doesn't exist **
-```
-- show :eyes:
-````
-(hbnb) show BaseModel 
-** instance id missing **
-````
-````
-(hbnb) show BaseModel Holberton
-** no instance found **
-````
-- create :pencil2:
-````
-(hbnb) create BaseModel
-49faff9a-6318-451f-87b6-910505c55907
-````
-- all:crystal_ball:
-````
-(hbnb) all BaseModel
-["[BaseModel] (49faff9a-6318-451f-87b6-910505c55907) {'created_at': datetime.datetime(2017, 10, 2, 3, 10, 25, 903293), 'id': '49faff9a-6318-451f-87b6-910505c55907', 'updated_at': datetime.datetime(2017, 10, 2, 3, 10, 25, 903300)}"]
-````
-- show :eyes:
-````
-(hbnb) show BaseModel 49faff9a-6318-451f-87b6-910505c55907
-[BaseModel] (49faff9a-6318-451f-87b6-910505c55907) {'created_at': datetime.datetime(2017, 10, 2, 3, 10, 25, 903293), 'id': '49faff9a-6318-451f-87b6-910505c55907', 'updated_at': datetime.datetime(2017, 10, 2, 3, 10, 25, 903300)}
-````
-- destroy :fire:
-````
-(hbnb) destroy
-** class name missing **
-````
-- update :point_up_2:
-````
-(hbnb) update BaseModel 49faff9a-6318-451f-87b6-910505c55907 first_name "Betty"
-````
-- show :eyes:
-````
-(hbnb) show BaseModel 49faff9a-6318-451f-87b6-910505c55907
-[BaseModel] (49faff9a-6318-451f-87b6-910505c55907) {'first_name': 'Betty', 'id': '49faff9a-6318-451f-87b6-910505c55907', 'created_at': datetime.datetime(2017, 10, 2, 3, 10, 25, 903293), 'updated_at': datetime.datetime(2017, 10, 2, 3, 11, 3, 49401)}
-````
-- create :pencil2:
-````
-(hbnb) create BaseModel
-2dd6ef5c-467c-4f82-9521-a772ea7d84e9
-````
-- all :crystal_ball:
-````
-(hbnb) all BaseModel
-["[BaseModel] (2dd6ef5c-467c-4f82-9521-a772ea7d84e9) {'id': '2dd6ef5c-467c-4f82-9521-a772ea7d84e9', 'created_at': datetime.datetime(2017, 10, 2, 3, 11, 23, 639717), 'updated_at': datetime.datetime(2017, 10, 2, 3, 11, 23, 639724)}", "[BaseModel] (49faff9a-6318-451f-87b6-910505c55907) {'first_name': 'Betty', 'id': '49faff9a-6318-451f-87b6-910505c55907', 'created_at': datetime.datetime(2017, 10, 2, 3, 10, 25, 903293), 'updated_at': datetime.datetime(2017, 10, 2, 3, 11, 3, 49401)}"]
-(hbnb) destroy BaseModel 49faff9a-6318-451f-87b6-910505c55907
-````
-- show :eyes:
-````
-(hbnb) show BaseModel 49faff9a-6318-451f-87b6-910505c55907
-** no instance found **
-````
 
-```
-(hbnb) 
-```
+### [1. Head styling](./1-index.html)
+* Write an HTML page that displays a header and a footer by using the style tag in the head tag (same as 0-index.html)
+
+
+### [2. CSS files](./2-index.html)
+* Write an HTML page that displays a header and a footer by using CSS files (same as 1-index.html)
+
+
+### [3. Zoning done!](./3-index.html)
+* Write an HTML page that displays a header and footer by using CSS files (same as 2-index.html)
+
+
+### [4. Search!](./4-index.html)
+* Write an HTML page that displays a header, footer and a filters box with a search button.
+
+
+### [5. More filters](./5-index.html)
+* Write an HTML page that displays a header, footer and a filters box.
+
+
+### [6. It's (h)over](./6-index.html)
+* Write an HTML page that displays a header, footer and a filters box with dropdown.
+
+
+### [7. Display results](./7-index.html)
+* Write an HTML page that displays a header, footer, a filters box with dropdown and results.
+
+
+### [8. More details](./8-index.html)
+* Write an HTML page that displays a header, a footer, a filter box (dropdown list) and the result of the search.
+
+
+### [9. Full details](./100-index.html)
+* Write an HTML page that displays a header, footer, a filters box with dropdown and results.
+
+
+### [10. Flex](./101-index.html)
+* Improve the Places section by using Flexible boxes for all Place articles
+
+
+### [11. Responsive design](./102-index.html)
+* Improve the page by adding responsive design to display correctly in mobile or small screens.
+
+
+### [12. Accessibility](./103-index.html)
+* Improve the page by adding Accessibility support
+
 ---
 
-## Those commands also can be used in this way:
-
-1- create :pencil2:
-````
-(hbnb) <class name>.create()
-````
-2- all :crystal_ball:
-````
-(hbnb) <class name>.all()
-````
-3- destroy :fire:
-````
-(hbnb) <class name>.destroy("<id>")
-````
-4- show :eyes:
-````
-(hbnb) <class name>.show("<id>")
-````
-5- update :point_up_2:
-````
-(hbnb) <class name>.update("<id>", "<attribute name>", "<attribute value>")
-````
-
-### AUTHORS 
-* [Santiago Trujillo](https://github.com/thiago1623) :guitar:
-* [Laura Perez](https://github.com/lperezcas16) :smile_cat:
-
-[contributors-shield]: https://img.shields.io/github/contributors/thiago1623/AirBnB_clone?style=flat-square
-[contributors-url]: https://github.com/thiago1623/AirBnB_clone/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/thiago1623/AirBnB_clone.svg?style=flat-square
-[forks-url]: https://github.com/thiago1623/AirBnB_clone/network/members
-[stars-shield]: https://img.shields.io/github/stars/thiago1623/AirBnB_clone.svg?style=flat-square
-[stars-url]: https://github.com/thiago1623/AirBnB_clone/stargazers
-[issues-shield]: https://img.shields.io/github/issues/thiago1623/AirBnB_clone?style=flat-square
+## Author
+* **Laura Perez** - [lperezcas16](https://github.com/lperezcas16)
